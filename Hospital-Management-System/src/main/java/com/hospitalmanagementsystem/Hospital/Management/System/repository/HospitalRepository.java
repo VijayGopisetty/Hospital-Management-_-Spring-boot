@@ -31,4 +31,8 @@ public class HospitalRepository {
         UUID id=h.getHospitalId();
         hospitalDB.put(id,h);
     }
+
+    public Hospital getHospitalById(UUID id){
+        return hospitalDB.get(id);
+    }
 }

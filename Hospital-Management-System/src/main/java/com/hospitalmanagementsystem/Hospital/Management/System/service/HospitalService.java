@@ -2,6 +2,7 @@ package com.hospitalmanagementsystem.Hospital.Management.System.service;
 
 import com.hospitalmanagementsystem.Hospital.Management.System.models.Hospital;
 import com.hospitalmanagementsystem.Hospital.Management.System.repository.HospitalRepository;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -9,10 +10,8 @@ import java.util.UUID;
 
 @Service
 public class HospitalService {
+    @Autowired
     HospitalRepository hospitalRepository;
-    public HospitalService() {
-        this.hospitalRepository = new HospitalRepository();
-    }
 
     public List<Hospital> getAllHospital(){
         return hospitalRepository.getAllHospital();
@@ -21,5 +20,8 @@ public class HospitalService {
         h.setHospitalId(UUID.randomUUID());
         hospitalRepository.registerHospital(h);
 
+    }
+    public Hospital getHospital(UUID id){
+        return hospitalRepository.getHospitalById(id);
     }
 }
