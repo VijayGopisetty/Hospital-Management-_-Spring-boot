@@ -9,10 +9,13 @@ public class Patient {
     String disease;
     Long contactNumber;
     UUID docId;
+    UUID hospitalId;
     int age;
     String emailId;
+    boolean isAdmit;
+    UUID bedId;
 
-    public Patient(UUID patientId, String name, String address, String disease, Long contactNumber, UUID docId, int age, String emailId) {
+    public Patient(UUID patientId, String name, String address, String disease, Long contactNumber, UUID docId, int age, String emailId,UUID hospitalId, UUID bedId) {
         this.patientId = patientId;
         this.name = name;
         this.address = address;
@@ -21,6 +24,9 @@ public class Patient {
         this.docId = docId;
         this.age = age;
         this.emailId = emailId;
+        this.hospitalId=hospitalId;
+        this.isAdmit=true;
+        this.bedId=bedId;
     }
 
     public UUID getPatientId() {
@@ -85,5 +91,29 @@ public class Patient {
 
     public void setEmailId(String emailId) {
         this.emailId = emailId;
+    }
+
+    public UUID getHospitalId() {
+        return hospitalId;
+    }
+
+    public void setHospitalId(UUID hospitalId) {
+        this.hospitalId = hospitalId;
+    }
+
+    public boolean isAdmit() {
+        return isAdmit;
+    }
+
+    public void setAdmit(boolean admit) {
+        isAdmit = admit;
+    }
+
+    public UUID getBedId() {
+        return bedId;
+    }
+
+    public void setBedId(UUID bedId) {
+        this.bedId = bedId;
     }
 }

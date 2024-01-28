@@ -1,5 +1,6 @@
 package com.hospitalmanagementsystem.Hospital.Management.System.repository;
 
+import com.hospitalmanagementsystem.Hospital.Management.System.models.Bed;
 import com.hospitalmanagementsystem.Hospital.Management.System.models.Hospital;
 import org.springframework.stereotype.Repository;
 

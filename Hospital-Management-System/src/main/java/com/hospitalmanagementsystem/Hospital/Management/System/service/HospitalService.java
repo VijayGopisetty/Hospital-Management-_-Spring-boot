@@ -1,5 +1,6 @@
 package com.hospitalmanagementsystem.Hospital.Management.System.service;
 
+import com.hospitalmanagementsystem.Hospital.Management.System.models.Doctor;
 import com.hospitalmanagementsystem.Hospital.Management.System.models.Hospital;
 import com.hospitalmanagementsystem.Hospital.Management.System.repository.HospitalRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,5 +24,20 @@ public class HospitalService {
     }
     public Hospital getHospital(UUID id){
         return hospitalRepository.getHospitalById(id);
+    }
+
+    public Doctor getMinimumPatientDoctorInHospital(UUID hospitalId){
+        Hospital obj=hospitalRepository.getHospitalById(hospitalId);
+        List<Doctor> doctors=obj.getDoctors();
+        Doctor minDoctor=null;
+        int min=Integer.MAX_VALUE;
+        for(Doctor doc:doctors){
+            int noOfPatients=doc.getPatients().size();
+            if(min>noOfPatients){
+                min=noOfPatients;
+                minDoctor=doc;
+            }
+        }
+        return minDoctor;
     }
 }
