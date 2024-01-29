@@ -27,4 +27,7 @@ public class DoctorRepository {
         }
         return doctors;
     }
+    public Doctor getDocById(UUID docId){
+        return doctorDB.get(docId);
+    }
 }

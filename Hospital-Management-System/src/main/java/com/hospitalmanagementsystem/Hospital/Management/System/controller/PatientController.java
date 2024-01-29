@@ -21,4 +21,9 @@ public class PatientController {
     public Patient getPatientById(@PathVariable UUID pId){
         return patientService.getPatient(pId);
     }
+    @DeleteMapping("/{pId}/remove")
+    public String deletePatient(@PathVariable UUID pId){
+        patientService.deletePatient(pId);
+        return "Patient got deleted";
+    }
 }

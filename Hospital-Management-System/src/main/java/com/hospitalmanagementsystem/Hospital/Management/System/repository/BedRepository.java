@@ -22,4 +22,7 @@ public class BedRepository {
         }
         return beds;
     }
+    public Bed getBed(UUID bedId){
+        return bedDB.get(bedId);
+    }
 }

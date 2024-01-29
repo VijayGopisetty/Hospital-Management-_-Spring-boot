@@ -10,7 +10,7 @@ import java.util.List;
 import java.util.UUID;
 
 @Service
-public class HospitalService {
+public class HospitalService extends patientOperationUtils{
     @Autowired
     HospitalRepository hospitalRepository;
 

@@ -30,6 +30,10 @@ public class BedService {
         obj.setHospital(hospitalId);
         obj.setBedId(UUID.randomUUID());
         //hospitalRepository.getHospitalById(hospitalId).getBeds().add(obj);
+        hospitalRepository.getHospitalById(hospitalId).getBeds().add(obj);
         bedRepository.addBed(obj);
+    }
+    public Bed getBedById(UUID bedId){
+        return bedRepository.getBed(bedId);
     }
 }
